@@ -19,10 +19,7 @@ def encrypt(key_, inp):
                 else:
                     array[x_][y_] = ' '
                 curr += 1
-
-
         curr = 0
-
         for y_ in range(x):
             for x_ in range(y):
                 outp += array[x_][y_]
@@ -38,5 +35,4 @@ def bruteforce(_inp):
     messages = []
     for i in range(int(len(_inp)/2)):
         messages.append(encrypt(i+1, _inp))
-    return messages
-        
+    return messages  
