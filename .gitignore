@@ -1,2 +1,4 @@
 /caesar/__pycache__/
 /transpositional/__pycache__/
+.gitignore
+.DS_Store

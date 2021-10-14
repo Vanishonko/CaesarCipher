@@ -3,7 +3,7 @@ import encrypt as enc
 
 sg.theme("Dark Amber")
 
-layout = [  [sg.Text("Key", font = "default 15 bold", k = "inputKey"), sg.Slider(range = (1, 25), font = "default 15", orientation = "horizontal", expand_x = True, tooltip = "Your desired key")],
+layout = [  [sg.Text("Key", font = "default 15 bold", k = "inputKey"), sg.Slider(range = (2, 10), font = "default 15", orientation = "horizontal", expand_x = True, tooltip = "Your desired key")],
             [sg.Text("Input your text", font = "default 20")],
             [sg.Multiline(font = "default 20", size = (None, 5), expand_y = True, expand_x = True, no_scrollbar = True)],
             [sg.Text("Output", font = "default 20")],
