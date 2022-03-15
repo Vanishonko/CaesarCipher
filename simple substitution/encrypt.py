@@ -48,7 +48,6 @@ def generateRandomKey():
 
 keySet = generateRandomKey()
 print(keySet)
-
 def translateMessage(key_, msg_, mode):
     newMsg = ''
     if mode == 'encrypt':
