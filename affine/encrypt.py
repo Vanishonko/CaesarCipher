@@ -3,13 +3,13 @@ symbols = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
 
 def encrypt(key_, msg_, encrypting_):
     k1 = math.floor(key_ / 100)
-    while k1 > 26:
-        k1 -= 26
     k2 = key_ % 100
     if encrypting_:
-        newMsg = multiplicative(k2, caesar(k1, msg_, encrypting_), encrypting_)
+        caesarMsg = caesar(k1, msg_, True)
+        newMsg = multiplicative(k2, caesarMsg, True)
     else:
-        newMsg = caesar(k1, multiplicative(k2, msg_, encrypting_), encrypting_)
+        multiplicativeMsg = multiplicative(k2, msg_, False)
+        newMsg = caesar(k1, multiplicativeMsg, False)
     return newMsg
 
 def caesar(key_, msg, encrypting_):
@@ -44,8 +44,8 @@ def multiplicative(key_, msg, encrypting_):
         if i == ' ':
             newMsg += ' '
         else:
-            curIndex = symbols.index(i)
-            newSym = symbols[ curIndex * key_ % 26]
+            curIndex = symbols.index(i) + 1
+            newSym = symbols[ (curIndex * key_ % 26)]
             newMsg += newSym
     return newMsg
 
